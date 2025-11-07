@@ -1,0 +1,27 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	output(output)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> agent\3aPatchToolCallsMiddleware\2ebefore_agent;
+	agent\3a__end__ --> output;
+	output --> __end__;
+	subgraph agent
+	agent\3amodel(model)
+	agent\3atools(tools)
+	agent\3aSummarizationMiddleware\2ebefore_model(SummarizationMiddleware.before_model)
+	agent\3aPatchToolCallsMiddleware\2ebefore_agent(PatchToolCallsMiddleware.before_agent)
+	agent\3a__end__(<p>__end__</p>)
+	agent\3aPatchToolCallsMiddleware\2ebefore_agent --> agent\3aSummarizationMiddleware\2ebefore_model;
+	agent\3aSummarizationMiddleware\2ebefore_model --> agent\3amodel;
+	agent\3amodel -.-> agent\3a__end__;
+	agent\3amodel -.-> agent\3atools;
+	agent\3atools -.-> agent\3aSummarizationMiddleware\2ebefore_model;
+	end
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

@@ -34,7 +34,7 @@ TAVILY_API_KEY=your_tavily_api_key
 ## Usage
 
 ```bash
-uipath run agent '{"messages": [{"type": "human", "content": "Research the history of artificial intelligence"}]}'
+uipath run agent '{"query": "History of word embeddings"}'
 ```
 
 The agent will:
