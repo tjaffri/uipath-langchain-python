@@ -23,11 +23,6 @@
                         "default": null,
                         "title": "Report",
                         "type": "string"
-                    },
-                    "completed_at": {
-                        "default": null,
-                        "title": "Completed At",
-                        "type": "string"
                     }
                 },
                 "required": []
